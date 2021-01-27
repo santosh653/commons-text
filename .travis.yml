@@ -12,7 +12,9 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
+arch:
+  - amd64
+  - ppc64le
 language: java
 
 jdk:
@@ -24,6 +26,9 @@ jdk:
 matrix:
   allow_failures:
     - jdk: openjdk-ea
+      arch: amd64
+    - jdk: openjdk-ea
+      arch: ppc64le
 
 script:
   - mvn -V --no-transfer-progress
